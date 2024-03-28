@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Resources;
 
 use App\Models\TaskModel;
@@ -16,7 +18,7 @@ final class IndexResource extends JsonResource
         return [
             'title' => $this->title,
             'description' => $this->description,
-            'status' => $this->statusModel->title,
+            'status' => $this->statusModel?->title,
             'created' => $this->created_at->toString(),
             'updated' => $this->updated_at->toString()
         ];

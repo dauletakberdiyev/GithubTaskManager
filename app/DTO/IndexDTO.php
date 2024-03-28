@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTO;
 
-final class IndexDTO
+final readonly class IndexDTO
 {
     public function __construct(
-        public readonly ?string $sortingBy,
+        public ?string $sortingBy,
     ) {
     }
 }

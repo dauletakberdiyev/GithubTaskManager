@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\TaskModel;
@@ -22,10 +24,11 @@ final class TaskController extends Controller
         if(!is_null($indexDto->sortingBy)) {
             $task->orderBy($indexDto->sortingBy);
         }
-        return response()->json([
-            'message' => 'Tasks successfully returned',
-            'data' => IndexResource::collection($task->get())
-        ]);
+
+        return $this->response(
+            self::translate('task.index'),
+            IndexResource::collection($task->get())
+        );
     }
 
     public function create(CreateRequest $request): JsonResponse
@@ -40,10 +43,10 @@ final class TaskController extends Controller
             $task->save();
         });
 
-        return response()->json([
-            'message' => 'Task created successfully',
-            'data' => ''
-        ]);
+        return $this->response(
+            self::translate('task.create'),
+            ''
+        );
     }
 
     public function update(TaskModel $task, UpdateRequest $request): JsonResponse
@@ -57,19 +60,19 @@ final class TaskController extends Controller
             $task->save();
         });
 
-        return response()->json([
-            'message' => 'Task updated successfully',
-            'data' => ''
-        ]);
+        return $this->response(
+            self::translate('task.update'),
+            ''
+        );
     }
 
     public function delete(TaskModel $task): JsonResponse
     {
         $task->delete();
 
-        return response()->json([
-            'message' => 'Task deleted successfully',
-            'data' => ''
-        ]);
+        return $this->response(
+            self::translate('task.delete'),
+            ''
+        );
     }
 }

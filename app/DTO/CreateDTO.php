@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTO;
 
-final class CreateDTO
+final readonly class CreateDTO
 {
     public function __construct(
-        public readonly string $title,
-        public readonly string $description
+        public string $title,
+        public string $description
     ) {
     }
 }
