@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
-
+use App\Http\Controllers\StatusController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +26,11 @@ Route::prefix('task')->name('task-')->group(function () {
     Route::post('', [TaskController::class, 'create'])->name('create');
     Route::put('{task}', [TaskController::class, 'update'])->name('update');
     Route::delete('{task}', [TaskController::class, 'delete'])->name('delete');
+});
+
+Route::prefix('status')->name('status-')->group(function () {
+    Route::get('', [StatusController::class, 'index'])->name('index');
+    Route::post('', [StatusController::class, 'create'])->name('create');
+    Route::put('{task}', [StatusController::class, 'update'])->name('update');
+    Route::delete('{task}', [StatusController::class, 'delete'])->name('delete');
 });
