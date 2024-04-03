@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Resources;
+namespace Main\Domain\Task\Resources;
 
-use App\Models\TaskModel;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Main\Support\Models\TaskModel;
+
 
 /**
  *

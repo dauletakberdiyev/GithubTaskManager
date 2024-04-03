@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DTO;
+namespace Main\Domain\Task\DTO;
 
 final readonly class IndexDTO
 {

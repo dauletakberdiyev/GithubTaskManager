@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Requests;
+namespace Main\Domain\Task\Requests;
 
-use App\DTO\CreateDTO;
 use Illuminate\Foundation\Http\FormRequest;
+use Main\Domain\Task\DTO\CreateDTO;
 
 final class CreateRequest extends FormRequest
 {

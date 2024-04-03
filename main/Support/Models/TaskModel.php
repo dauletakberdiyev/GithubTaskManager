@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Models;
+namespace Main\Support\Models;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -21,6 +21,8 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 final class TaskModel extends Model
 {
     use HasFactory;
+
+    public const OPEN_STATUS = 1;
 
     /**
      * @var string
