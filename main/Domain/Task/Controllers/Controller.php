@@ -6,7 +6,6 @@ namespace Main\Domain\Task\Controllers;
 
 use App\Http\Controllers\Controller as BaseController;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\DB;
 use Main\Domain\Task\Handlers\CreateHandler;
 use Main\Domain\Task\Handlers\IndexHandler;
 use Main\Domain\Task\Handlers\UpdateHandler;
@@ -34,10 +33,7 @@ final class Controller extends BaseController
     {
         $handler->handle($request->getDTO());
 
-        return $this->response(
-            self::translate('task.create'),
-            ''
-        );
+        return $this->response(self::translate('task.create'));
     }
 
     /**
@@ -47,19 +43,13 @@ final class Controller extends BaseController
     {
         $handler->handle($request->getDTO(), $task);
 
-        return $this->response(
-            self::translate('task.update'),
-            ''
-        );
+        return $this->response(self::translate('task.update'));
     }
 
     public function delete(TaskModel $task): JsonResponse
     {
         $task->delete();
 
-        return $this->response(
-            self::translate('task.delete'),
-            ''
-        );
+        return $this->response(self::translate('task.delete'));
     }
 }

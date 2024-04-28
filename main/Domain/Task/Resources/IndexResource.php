@@ -4,24 +4,22 @@ declare(strict_types=1);
 
 namespace Main\Domain\Task\Resources;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use Main\Support\Models\TaskModel;
-
+use Main\Support\Resource\BaseResource;
 
 /**
- *
  * @mixin TaskModel
  */
-final class IndexResource extends JsonResource
+final class IndexResource extends BaseResource
 {
-    public function toArray($request): array
+    public function getResponseArray(): array
     {
         return [
             'title' => $this->title,
             'description' => $this->description,
-            'status' => $this->statusModel?->title,
-            'created' => $this->created_at->toString(),
-            'updated' => $this->updated_at->toString()
+            'status' => new StatusResource($this->statusModel),
+            'created' => $this->created_at->toDateTimeString(),
+            'updated' => $this->updated_at->toDateTimeString()
         ];
     }
 }
