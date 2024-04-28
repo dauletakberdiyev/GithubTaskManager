@@ -7,9 +7,9 @@ namespace Main\Domain\Task\DTO;
 final readonly class UpdateDTO
 {
     public function __construct(
-        public string $title,
-        public string $description,
-        public int $status
+        public ?string $title,
+        public ?string $description,
+        public ?int $status
     ) {
     }
 }

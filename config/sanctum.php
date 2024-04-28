@@ -6,7 +6,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Stateful Domains
+    | Stateful main
     |--------------------------------------------------------------------------
     |
     | Requests from the following domains / hosts will receive stateful API

@@ -24,9 +24,9 @@ final readonly class UpdateHandler
         try {
             DB::beginTransaction();
 
-            $task->title = $dto->title;
-            $task->description = $dto->description;
-            $task->status = $dto->status;
+            if ($dto->title) $task->title = $dto->title;
+            if ($dto->description) $task->description = $dto->description;
+            if ($dto->status) $task->status = $dto->status;
             $task->save();
 
             DB::commit();
