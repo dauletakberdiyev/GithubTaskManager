@@ -20,7 +20,7 @@ trait ResponseTrait
     final public function errorResponse(string $message, int $code = Response::HTTP_INTERNAL_SERVER_ERROR): JsonResponse
     {
         return response()->json([
-            'message' => $message
+            'message' => $message,
         ], $code);
     }
 }

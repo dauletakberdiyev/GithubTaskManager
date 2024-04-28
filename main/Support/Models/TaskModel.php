@@ -40,7 +40,7 @@ final class TaskModel extends Model
     protected $fillable = [
         'title',
         'description',
-        'status'
+        'status',
     ];
 
     public function statusModel(): HasOne

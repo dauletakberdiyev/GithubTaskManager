@@ -29,6 +29,6 @@ final class StatusModel extends Model
      * @var string[]
      */
     protected $fillable = [
-        'title'
+        'title',
     ];
 }

@@ -10,7 +10,8 @@ use Main\Support\Models\TaskModel;
 
 final readonly class IndexHandler
 {
-    public function handle(IndexDTO $dto): Collection {
+    public function handle(IndexDTO $dto): Collection
+    {
         return TaskModel::query()->with('statusModel')
             ->when($dto->sortingBy, fn ($query) => $query->orderBy($dto->sortingBy))
             ->get();

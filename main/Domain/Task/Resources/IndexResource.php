@@ -20,7 +20,7 @@ final class IndexResource extends BaseResource
             'description' => $this->description,
             'status' => new StatusResource($this->statusModel),
             'created' => $this->created_at->toDateTimeString(),
-            'updated' => $this->updated_at->toDateTimeString()
+            'updated' => $this->updated_at->toDateTimeString(),
         ];
     }
 }

@@ -25,7 +25,7 @@ final class TaskModelFactory extends Factory
         return [
             'title' => $this->faker->sentence,
             'description' => $this->faker->text,
-            'status' => $status->id
+            'status' => $status->id,
         ];
     }
 }

@@ -24,28 +24,32 @@ final readonly class UpdateHandler
         try {
             DB::beginTransaction();
 
-            if ($dto->title) $task->title = $dto->title;
-            if ($dto->description) $task->description = $dto->description;
-            if ($dto->status) $task->status = $dto->status;
+            if ($dto->title) {
+                $task->title = $dto->title;
+            }
+            if ($dto->description) {
+                $task->description = $dto->description;
+            }
+            if ($dto->status) {
+                $task->status = $dto->status;
+            }
             $task->save();
 
             DB::commit();
-        }
-        catch (QueryException $error) {
+        } catch (QueryException $error) {
             DB::rollBack();
 
             throw new DomainException(
                 self::translate('task.errors.query_error', [
-                    'message' => $error->getMessage()
+                    'message' => $error->getMessage(),
                 ])
             );
-        }
-        catch (Exception $error) {
+        } catch (Exception $error) {
             DB::rollBack();
 
             throw new DomainException(
                 self::translate('task.errors.error', [
-                    'message' => $error->getMessage()
+                    'message' => $error->getMessage(),
                 ])
             );
         }

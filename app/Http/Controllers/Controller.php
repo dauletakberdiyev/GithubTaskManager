@@ -11,5 +11,5 @@ use Main\Support\Traits\ResponseTrait;
 
 class Controller extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests, ResponseTrait, LanguageTrait;
+    use AuthorizesRequests, DispatchesJobs, LanguageTrait, ResponseTrait, ValidatesRequests;
 }

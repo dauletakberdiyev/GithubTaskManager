@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Main\Domain\Task\Controllers\Controller as MainController;
 use Main\Domain\Status\Controllers\Controller as StatusController;
+use Main\Domain\Task\Controllers\Controller as MainController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

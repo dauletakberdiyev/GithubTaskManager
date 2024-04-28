@@ -8,5 +8,5 @@ return [
     'errors' => [
         'query_error' => 'Error while executing query: :message',
         'error' => 'Error: :message',
-    ]
+    ],
 ];
